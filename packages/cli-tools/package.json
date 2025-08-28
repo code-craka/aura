@@ -34,25 +34,25 @@
     "automation"
   ],
   "dependencies": {
-    "commander": "^11.1.0",
+    "@project-aura/shared-utils": "file:../shared-utils",
     "chalk": "^5.3.0",
-    "ora": "^7.0.1",
-    "inquirer": "^9.2.12",
-    "fs-extra": "^11.2.0",
+    "commander": "^11.1.0",
     "dotenv": "^16.3.1",
     "execa": "^8.0.1",
-    "@project-aura/shared-utils": "file:../shared-utils"
+    "fs-extra": "^11.2.0",
+    "inquirer": "^12.9.4",
+    "ora": "^7.0.1"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
     "@types/fs-extra": "^11.0.4",
-    "typescript": "^5.3.0",
-    "tsup": "^8.0.1",
-    "vitest": "^1.0.4",
-    "@vitest/coverage-v8": "^1.0.4",
-    "eslint": "^8.56.0",
+    "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0"
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^8.56.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.0",
+    "vitest": "^3.2.4"
   },
   "engines": {
     "node": ">=20.0.0"
