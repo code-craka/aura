@@ -1,0 +1,31 @@
+name: 'Dependency Check'
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Dependency Review
+      uses: actions/dependency-review-action@v4
+      with:
+        # Optional: add configuration for severity threshold
+        fail-on-severity: moderate
+        # Optional: add license checking
+        license-check: true
+        # Optional: allow specific vulnerabilities
+        # allow-licenses: MIT, Apache-2.0, BSD-3-Clause
+        # Optional: fail on specific vulnerabilities
+        # fail-on-scopes: runtime

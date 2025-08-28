@@ -54,8 +54,8 @@
   ],
   "dependencies": {
     "events": "^3.3.0",
-    "@project-aura/ai-engine": "workspace:*",
-    "@project-aura/shared-utils": "workspace:*"
+    "@project-aura/ai-engine": "file:../ai-engine",
+    "@project-aura/shared-utils": "file:../shared-utils"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

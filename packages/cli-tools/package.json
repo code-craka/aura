@@ -41,7 +41,7 @@
     "fs-extra": "^11.2.0",
     "dotenv": "^16.3.1",
     "execa": "^8.0.1",
-    "@project-aura/shared-utils": "workspace:*"
+    "@project-aura/shared-utils": "file:../shared-utils"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

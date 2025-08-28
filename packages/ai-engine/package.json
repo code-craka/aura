@@ -67,7 +67,7 @@
     "crypto-js": "^4.2.0",
     "zod": "^3.22.4",
     "rxjs": "^7.8.1",
-    "@project-aura/shared-utils": "workspace:*"
+    "@project-aura/shared-utils": "file:../shared-utils"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
