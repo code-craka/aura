@@ -1,0 +1,10 @@
+.node_modules/
+.dist/
+.build/
+.out/
+.cache/
+.packages/browser-core/node_modules/
+.packages/browser-extension/node_modules/
+.packages/ui-components/node_modules/
+.amazonq/mcp.json
+.mcp.json

@@ -1,0 +1,111 @@
+{
+  "name": "@project-aura/ui-components",
+  "version": "0.1.0",
+  "description": "UI components package for Project Aura - React components for browser interface and AI interactions",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./components/browser": {
+      "types": "./dist/components/browser/index.d.ts",
+      "import": "./dist/components/browser/index.mjs",
+      "require": "./dist/components/browser/index.js"
+    },
+    "./components/ai": {
+      "types": "./dist/components/ai/index.d.ts",
+      "import": "./dist/components/ai/index.mjs",
+      "require": "./dist/components/ai/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.mjs",
+      "require": "./dist/hooks/index.js"
+    },
+    "./styles": {
+      "types": "./dist/styles/index.d.ts",
+      "import": "./dist/styles/index.mjs",
+      "require": "./dist/styles/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "build:prod": "tsup --minify",
+    "dev": "tsup --watch",
+    "dev:full": "tsup --watch",
+    "test": "vitest",
+    "test:unit": "vitest",
+    "test:integration": "vitest --config vitest.integration.config.ts",
+    "test:e2e": "playwright test",
+    "test:coverage": "vitest --coverage",
+    "test:performance": "vitest --config vitest.performance.config.ts",
+    "lint": "eslint src/**/*.tsx src/**/*.ts",
+    "lint:fix": "eslint src/**/*.tsx src/**/*.ts --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist coverage test-results playwright-report",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [
+    "react",
+    "ui-components",
+    "browser",
+    "ai",
+    "typescript",
+    "tailwind-css",
+    "accessibility"
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@tanstack/react-query": "^5.14.0",
+    "@tanstack/react-virtual": "^3.0.1",
+    "zustand": "^4.4.7",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.2.0",
+    "lucide-react": "^0.303.0",
+    "framer-motion": "^11.0.3",
+    "@project-aura/ai-engine": "workspace:*",
+    "@project-aura/browser-core": "workspace:*",
+    "@project-aura/shared-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "tsup": "^8.0.1",
+    "vitest": "^1.0.4",
+    "@vitest/coverage-v8": "^1.0.4",
+    "playwright": "^1.40.1",
+    "@playwright/test": "^1.40.1",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "@storybook/react": "^7.6.0",
+    "@storybook/react-vite": "^7.6.0",
+    "storybook": "^7.6.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/project-aura.git",
+    "directory": "packages/ui-components"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/project-aura/issues"
+  },
+  "homepage": "https://github.com/your-org/project-aura/tree/main/packages/ui-components#readme"
+}

@@ -1,0 +1,95 @@
+{
+  "name": "@project-aura/ai-engine",
+  "version": "0.1.0",
+  "description": "AI engine package for Project Aura - handles AI model routing, context management, and intelligent processing",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./models": {
+      "types": "./dist/models/index.d.ts",
+      "import": "./dist/models/index.mjs",
+      "require": "./dist/models/index.js"
+    },
+    "./processing": {
+      "types": "./dist/processing/index.d.ts",
+      "import": "./dist/processing/index.mjs",
+      "require": "./dist/processing/index.js"
+    },
+    "./agents": {
+      "types": "./dist/agents/index.d.ts",
+      "import": "./dist/agents/index.mjs",
+      "require": "./dist/agents/index.js"
+    },
+    "./privacy": {
+      "types": "./dist/privacy/index.d.ts",
+      "import": "./dist/privacy/index.mjs",
+      "require": "./dist/privacy/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "build:prod": "tsup --minify",
+    "dev": "tsup --watch",
+    "dev:full": "tsup --watch",
+    "test": "vitest",
+    "test:unit": "vitest",
+    "test:integration": "vitest --config vitest.integration.config.ts",
+    "test:e2e": "vitest --config vitest.e2e.config.ts",
+    "test:coverage": "vitest --coverage",
+    "test:performance": "vitest --config vitest.performance.config.ts",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist coverage"
+  },
+  "keywords": [
+    "ai",
+    "machine-learning",
+    "openai",
+    "anthropic",
+    "google-ai",
+    "context-management",
+    "privacy",
+    "typescript"
+  ],
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.17.1",
+    "openai": "^4.24.7",
+    "@google/generative-ai": "^0.14.0",
+    "ollama": "^0.4.0",
+    "@pinecone-database/pinecone": "^2.0.1",
+    "crypto-js": "^4.2.0",
+    "zod": "^3.22.4",
+    "rxjs": "^7.8.1",
+    "@project-aura/shared-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "tsup": "^8.0.1",
+    "vitest": "^1.0.4",
+    "@vitest/coverage-v8": "^1.0.4",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/project-aura.git",
+    "directory": "packages/ai-engine"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/project-aura/issues"
+  },
+  "homepage": "https://github.com/your-org/project-aura/tree/main/packages/ai-engine#readme"
+}

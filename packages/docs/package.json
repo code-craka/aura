@@ -1,0 +1,62 @@
+{
+  "name": "@project-aura/docs",
+  "version": "0.1.0",
+  "description": "Documentation package for Project Aura - comprehensive documentation and guides",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "next build",
+    "build:prod": "next build",
+    "dev": "next dev",
+    "dev:full": "next dev",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next out"
+  },
+  "keywords": [
+    "documentation",
+    "nextjs",
+    "docs",
+    "guide",
+    "tutorial"
+  ],
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "nextra": "^2.13.2",
+    "nextra-theme-docs": "^2.13.2",
+    "@mdx-js/react": "^3.0.0",
+    "gray-matter": "^4.0.3",
+    "prismjs": "^1.29.0",
+    "lucide-react": "^0.303.0",
+    "clsx": "^2.0.0",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/project-aura.git",
+    "directory": "packages/docs"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/project-aura/issues"
+  },
+  "homepage": "https://docs.project-aura.dev"
+}

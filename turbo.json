@@ -1,0 +1,77 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "package.json", "tsconfig.json"],
+      "outputs": ["dist/**", "build/**"]
+    },
+    "build:prod": {
+      "dependsOn": ["^build:prod"],
+      "inputs": ["src/**", "package.json", "tsconfig.json"],
+      "outputs": ["dist/**", "build/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:full": {
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": [],
+      "inputs": ["src/**", "tests/**", "package.json", "tsconfig.json", "vitest.config.ts", "playwright.config.ts"],
+      "outputs": ["coverage/**"]
+    },
+    "test:unit": {
+      "dependsOn": [],
+      "inputs": ["src/**", "tests/unit/**", "package.json", "tsconfig.json", "vitest.config.ts"],
+      "outputs": ["coverage/**"]
+    },
+    "test:integration": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**", "tests/integration/**", "package.json", "tsconfig.json", "vitest.config.ts"],
+      "outputs": ["coverage/**"]
+    },
+    "test:e2e": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**", "tests/e2e/**", "package.json", "tsconfig.json", "playwright.config.ts"],
+      "outputs": ["test-results/**", "playwright-report/**"]
+    },
+    "test:coverage": {
+      "dependsOn": ["test"],
+      "inputs": ["coverage/**"],
+      "outputs": []
+    },
+    "test:performance": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**", "tests/load/**", "package.json", "tsconfig.json"],
+      "outputs": ["performance-results/**"]
+    },
+    "lint": {
+      "dependsOn": [],
+      "inputs": ["src/**", "tests/**", "package.json", ".eslintrc.js", ".prettierrc"]
+    },
+    "lint:fix": {
+      "dependsOn": [],
+      "inputs": ["src/**", "tests/**", "package.json", ".eslintrc.js", ".prettierrc"]
+    },
+    "type-check": {
+      "dependsOn": [],
+      "inputs": ["src/**", "package.json", "tsconfig.json"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "deploy:staging": {
+      "dependsOn": ["build:prod"],
+      "cache": false
+    },
+    "deploy:prod": {
+      "dependsOn": ["build:prod"],
+      "cache": false
+    }
+  }
+}

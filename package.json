@@ -1,0 +1,59 @@
+{
+  "name": "project-aura",
+  "version": "0.1.0",
+  "description": "The world's first truly agentic browser that eliminates the 'effort factor' through seamless AI integration",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "build:prod": "turbo run build:prod",
+    "dev": "turbo run dev",
+    "dev:full": "turbo run dev:full",
+    "test": "turbo run test",
+    "test:unit": "turbo run test:unit",
+    "test:integration": "turbo run test:integration",
+    "test:e2e": "turbo run test:e2e",
+    "test:coverage": "turbo run test:coverage",
+    "test:performance": "turbo run test:performance",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "deploy:staging": "turbo run deploy:staging",
+    "deploy:prod": "turbo run deploy:prod",
+    "release": "changeset publish",
+    "version": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@changesets/changelog-github": "^0.4.8",
+    "turbo": "^1.10.0",
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/project-aura.git"
+  },
+  "keywords": [
+    "browser",
+    "ai",
+    "chromium",
+    "automation",
+    "productivity",
+    "typescript",
+    "react"
+  ],
+  "author": "Project Aura Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-org/project-aura/issues"
+  },
+  "homepage": "https://github.com/your-org/project-aura#readme"
+}
