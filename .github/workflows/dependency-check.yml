@@ -7,9 +7,43 @@ on:
     branches: [ main, develop ]
 
 jobs:
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+
+    - name: Upload Trivy scan results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+    - name: Run npm audit
+      run: |
+        if [ -f package.json ]; then
+          npm audit --audit-level=moderate
+        else
+          echo "No package.json found, skipping npm audit"
+        fi
+
   dependency-review:
     name: Dependency Review
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     permissions:
       contents: read
       pull-requests: write
@@ -25,7 +59,7 @@ jobs:
         fail-on-severity: moderate
         # Optional: add license checking
         license-check: true
-        # Optional: allow specific vulnerabilities
-        # allow-licenses: MIT, Apache-2.0, BSD-3-Clause
-        # Optional: fail on specific vulnerabilities
-        # fail-on-scopes: runtime
+        # Optional: allow specific licenses
+        allow-licenses: MIT, Apache-2.0, BSD-3-Clause, ISC, BSD-2-Clause
+        # Optional: fail on specific vulnerability scopes
+        fail-on-scopes: runtime
